@@ -1,0 +1,166 @@
+body{
+    background-color: #070743;
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.diwali{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0rem;
+    padding:0.25rem;
+}
+.diwali-card-border {
+    background: linear-gradient(to right, red, green, blue, yellow);
+    border-radius: 5px;
+    margin-bottom: 4px;
+    margin-top: 3rem;
+    padding: 0.25rem;
+    animation: animateBorder 5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+.diwali-card {
+    background: #1f1f69;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.light {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    background: #b11c1c;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+}
+
+.light::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    height: 40px;
+    background: #fdff60;
+    border-radius: 50%;
+    border: 10px solid #9e0303;
+    box-sizing: border-box;
+}
+
+.light::after {
+    content: '';
+    position: absolute;
+    top: calc(-50% - 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 5px #eff000;
+    /* 0 0 0 10px rgba(255, 255, 255, .2); */
+    filter: blur(1px);
+    animation: animate 2s linear infinite;
+    transform-origin: bottom;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(-50%) scaleY(1);
+    }
+
+    50% {
+        transform: translateY(-50%) scaleY(1.2);
+    }
+
+    100% {
+        transform: translateY(-50%) scaleY(1);
+    }
+}
+
+.diwali-text-1{
+    display: block;
+}
+.diwali-text-2{
+    display: none;
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+
+    .diwali-text-1{
+        display: none;
+    }
+
+    .diwali-text-2{
+        display: block;
+    }
+    /* Styles specific to extra-small screens go here */
+    .light {
+        width: 40px;
+        height: 20px;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+
+    .light::before {
+        width: 100%;
+        height: 22px;
+        top: -10px;
+        border: 5px solid #9e0303;
+    }
+
+    .light::after {
+        width: 5px;
+        height: 15px;
+    }
+}
+
+@keyframes animateBorder {
+    0% {
+        background: linear-gradient(to right, red, green, blue, yellow);
+    }
+
+    20% {
+        background: linear-gradient(to right, yellow, red, green, blue);
+    }
+
+    40% {
+        background: linear-gradient(to right, blue, yellow, red, green);
+    }
+
+    60% {
+        background: linear-gradient(to right, green, blue, yellow, red);
+    }
+
+    80% {
+        background: linear-gradient(to right, red, green, blue, yellow);
+    }
+
+    100% {
+        background: linear-gradient(to right, yellow, red, green, blue);
+    }
+}
+
+
+@keyframes animateMyText {
+    0% {
+        text-shadow: 0px 0px 5px violet;
+    }
+
+    50% {
+        color: rgb(234, 240, 150);
+        text-shadow: 0px 0px 13px rgb(222, 238, 130);
+    }
+
+    100% {
+        color: violet;
+        text-shadow: 0px 0px 5px violet;
+    }
+}
+
+.diwali-text {
+    animation-name: animateMyText;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
